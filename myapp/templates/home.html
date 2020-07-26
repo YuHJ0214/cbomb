@@ -1,0 +1,52 @@
+
+{% load static %}
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/cover.css' %}">
+</head>
+
+<body class="text-center">
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand">Cbomb Table 1</h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <!--<a class="nav-link active" href="#">Home</a>-->
+        <!--<a class="nav-link" href="#">Features</a>-->
+        <!--<a class="nav-link" href="#">Contact</a>-->
+      </nav>
+    </div>
+  </header>
+
+  <main role="main" class="inner cover">
+    <!--<h1 class="cover-heading">Cover your page.</h1>-->
+    <!--<p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>-->
+    <p class="top">
+      <button type="button" onclick = "location.href = './m1'" class="btn btn-secondary btn-lg btn-lg btn-block">호출벨</button>
+    </p>
+
+    <p class="lead">
+    <div class="btn-group btn-group-lg btn-block" role="group" aria-label="...">
+      <div class="btn-group" role="group" aria-label="Third group"></div>
+      <button type="button" onclick = "location.href = './m2'" class="btn btn-secondary btn-lg">소주</button>
+      <button type="button" onclick = "location.href = './m3'" class="btn btn-secondary btn-lg">병맥주</button>
+    </div>
+    </p>
+      
+    <p class="lead2">
+      <div class="btn-group btn-group-lg btn-block" role="group2" aria-label="...">
+        <button type="button" onclick = "location.href = './m4'" class="btn btn-secondary btn-lg">메뉴판</button>
+        <button type="button" onclick = "location.href = './m5'" class="btn btn-secondary btn-lg">라면</button>
+      </div>
+      </p>
+
+    <p class="lead">물, 추가 세팅은 셀프코너를 이용해주세요.</p>
+  </main>
+
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p>Copyright © Cbomb All Rights Reserved 2020.</p>
+    </div>
+  </footer>
+</div>
+</body>
