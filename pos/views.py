@@ -8,7 +8,7 @@ import pandas as pd
 global table1
 
 global ind
-ind = 0;
+ind = 0
 # Create your views here.
 time.localtime(time.time())
 def start(request):
