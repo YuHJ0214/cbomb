@@ -11,4 +11,6 @@ ADD requirements.txt /code/
 RUN pip install -r requirements.txt
 ADD . /code/
 EXPOSE 8000
+CMD python manage.py makemigrations
+CMD python manage.py migrate
 CMD gunicorn myproject.wsgi:application --bind 0.0.0.0:8000
