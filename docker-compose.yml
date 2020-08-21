@@ -14,9 +14,13 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: /myproject/start
+    command: /code/start
     volumes:
       - .:/code
       - ./staticfiles:/staticfiles
     expose:
       - '8000'
+
+  app:
+    build: .
+    image: ${DOCKER_USER_ID}/cbomb
