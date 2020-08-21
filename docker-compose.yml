@@ -14,13 +14,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: /code/start
+    command: gunicorn myproject.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - .:/code
       - ./staticfiles:/staticfiles
     expose:
       - '8000'
-
-  app:
-    build: .
-    image: ${DOCKER_USER_ID}/cbomb
