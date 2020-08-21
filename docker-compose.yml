@@ -1,22 +1,16 @@
 version: '3'
+
 services:
-  nginx:
-    image: nginx:latest
+  app:
+    build: .
+    image: ${DOCKER_USER_ID}/cbomb
+  unit:
+    image: ruby:2.3
+    volumes:
+      - ${WORKSPACE_PATH}/${JOB_NAME}:/app
+    working_dir: /app
+    command: bash -c "bundle install && bundle exec ruby app_test.rb"
+  production:
+    image: ${DOCKER_USER_ID}/cbomb:${BUILD_NUMBER}
     ports:
-      - '80:80'
-    volumes:
-      - .:/code
-      - ./nginx:/etc/nginx/conf.d
-      - ./staticfiles:/static
-    depends_on:
-      - web
-  web:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    command: gunicorn myproject.wsgi:application --bind 0.0.0.0:8000
-    volumes:
-      - .:/code
-      - ./staticfiles:/staticfiles
-    expose:
-      - '8000'
+      - 8000:8000
