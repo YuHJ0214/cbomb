@@ -5,10 +5,11 @@ RUN apt-get update \
        postgresql-client \
     && rm -rf /var/lib/apt/lists/*
 
-COPY . /myproject  
-RUN pip install -r /myproject/requirements.txt  
-RUN chmod 755 /myproject/start  
-WORKDIR /myproject  
-EXPOSE 8000  
+RUN mkdir /code
+WORKDIR /code
+ADD requirements.txt /code/
+RUN pip install -r requirements.txt
+ADD . /code/
+RUN chmod 755 /code/start 
 
-ENTRYPOINT ["/myproject/start"]  
+

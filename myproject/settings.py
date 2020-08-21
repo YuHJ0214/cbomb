@@ -25,7 +25,7 @@ SECRET_KEY = 'qtki+^rxgd8@)#jrq!o$147@0bnxopuakno4okp6)f(vd@lkm+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.1.8", "127.0.0.1", ".cbomb.co.kr"]
+ALLOWED_HOSTS = ["192.168.1.8", "127.0.0.1", ".cbomb.co.kr", 'web']
 
 
 # Application definition
@@ -125,4 +125,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'myapp', 'static')
 ]
  
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
